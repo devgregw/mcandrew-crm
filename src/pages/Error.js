@@ -19,6 +19,8 @@ export default class Error extends React.Component {
                 return {code: 101, message: 'Error code is not a number'}
             case 102:
                 return {code: code, message: 'Unrecognized zone ID'}
+            case 103:
+                return {code: code, message: 'Suspicious numeric condition detected'}
             default:
                 return {code: 100, message: 'Unrecognized error code'}
         }

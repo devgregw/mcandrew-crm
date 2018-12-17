@@ -19,7 +19,11 @@ export default class NumericCondition {
         return `${this.comparison} ${this.value}`
     }
 
-    test(number) {
-        return eval(`${number}${this.comparison}${this.value}`)
+    static test(condition, number) {
+        if (condition.length === 1 || condition.length === 2)
+            // eslint-disable-next-line
+            return eval(`${number}${condition.comparison}${condition.value}`)
+        else
+            window.location.replace('/error?code=103')
     }
 }
