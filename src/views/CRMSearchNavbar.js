@@ -19,16 +19,14 @@ import {
     Input
 } from 'reactstrap';
 import * as firebase from 'firebase'
-import CustomerEditorModal from './CustomerEditorModal'
 
-export default class CRMHomeNavbar extends React.Component {
+export default class CRMSearchNavbar extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
             isOpen: false,
             displayNameModal: false,
             displayNameLoading: false,
-            newCustomerModal: false,
         }
         this.toggle = this.toggle.bind(this)
         this.toggleDisplayNameModal = this.toggleDisplayNameModal.bind(this)
@@ -42,13 +40,8 @@ export default class CRMHomeNavbar extends React.Component {
         this.setState({ displayNameModal: !this.state.displayNameModal, displayNameLoading: false })
     }
 
-    toggleNewCustomerModal() {
-        this.setState({newCustomerModal: !this.state.newCustomerModal})
-    }
-
     render() {
         return <div>
-            <CustomerEditorModal zone={this.props.match.params.area} models={this.props.models} isOpen={this.state.newCustomerModal} toggle={this.toggleNewCustomerModal.bind(this)}/>
             <Modal isOpen={this.state.displayNameModal} toggle={this.toggleDisplayNameModal}>
                 <ModalHeader toggle={this.toggleDisplayNameModal}>Change Display Name</ModalHeader>
                 <ModalBody>
@@ -78,10 +71,8 @@ export default class CRMHomeNavbar extends React.Component {
                             <NavLink active href="/">Select Area</NavLink>
                         </NavItem>
                         <UncontrolledDropdown nav inNavbar>
-                            <DropdownToggle style={{color: 'white'}} nav caret>New</DropdownToggle>
-                            <DropdownMenu right>
-                                <DropdownItem onClick={this.toggleNewCustomerModal.bind(this)}>Customer</DropdownItem>
-                            </DropdownMenu>
+                            <DropdownToggle disabled nav caret>New</DropdownToggle>
+                            <DropdownMenu/>
                         </UncontrolledDropdown>
                         <UncontrolledDropdown nav inNavbar>
                             <DropdownToggle style={{color: 'white'}} nav caret>{firebase.auth().currentUser.displayName || firebase.auth().currentUser.email}</DropdownToggle>

@@ -3,7 +3,6 @@ import {
     Breadcrumb, BreadcrumbItem
 } from 'reactstrap';
 import DatabaseLoader from '../views/DatabaseLoader'
-import Customer from '../models/Customer'
 import CRMHomeNavbar from '../views/CRMHomeNavbar'
 import Utilities from '../Utilities'
 import CustomerCardView from '../views/CustomerCardView'
@@ -19,7 +18,7 @@ export default class CRMHome extends React.Component {
         return <div>
             <CRMHomeNavbar models={content.models} match={this.props.match} zoneName={this.zoneName}/>
             <Breadcrumb style={{marginTop: '1rem', marginLeft: '1rem', marginRight: '1rem'}}>
-                <BreadcrumbItem><a href={`/home/${this.props.match.params.area}`}>{this.zoneName}</a></BreadcrumbItem>
+                <BreadcrumbItem><a href={`/${this.props.match.params.area}`}>{this.zoneName}</a></BreadcrumbItem>
                 <BreadcrumbItem active>Customers</BreadcrumbItem>
             </Breadcrumb>
             <div style={{margin: '1rem'}}>
