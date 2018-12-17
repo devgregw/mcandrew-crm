@@ -80,6 +80,7 @@ class ManagerCard extends React.Component {
     }
 
     render() {
+        document.title = 'Makes & Models - CRM'
         if (this.state.loading)
             return <FullScreenLoader />
         var makeOptions = {}

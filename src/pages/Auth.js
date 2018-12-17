@@ -51,6 +51,7 @@ export default class Auth extends React.Component {
     }
 
     render() {
+        document.title = 'Authentication - CRM'
         return <div className="Auth-background">
             <Card className="Auth-card" style={{minHeight: '571.8px'}}>
                 <div className={this.state.mode === 'out' ? 'panel' : 'panel hide'}>

@@ -16,9 +16,10 @@ export default class DatabaseLoader extends React.Component {
     }
 
     render() {
-        if (this.state.loading)
+        if (this.state.loading) {
+            document.title = 'Loading - CRM'
             return this.props.full ? <FullScreenLoader/> : <div style={{width: '100%'}}><img alt="Loading..." style={{height: '100px', position: 'relative', left: '50%', transform: 'translateX(-50%)'}} src="/loader.gif"/></div>
-        else
+        } else
             return this.props.complete(this.state.content)
     }
 }

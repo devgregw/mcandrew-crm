@@ -5,6 +5,7 @@ import {
 
 export default class AreaSelect extends React.Component {
   render() {
+    document.title = 'Select Area - CRM'
     return <div className="Auth-background">
       <Card className="Auth-card card-area">
         <CardBody>

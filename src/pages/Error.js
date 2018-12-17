@@ -14,6 +14,7 @@ export default class Error extends React.Component {
     }
 
     getErrorMessage(code) {
+        document.title = `Error ${code} - CRM`
         switch (parseInt(code)) {
             case NaN:
                 return {code: 101, message: 'Error code is not a number'}

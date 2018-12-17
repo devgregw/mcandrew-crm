@@ -22,6 +22,7 @@ export default class CRMSearch extends React.Component {
     }
 
     onLoadComplete(content) {
+        document.title = `Search ${this.zoneName} - CRM`
         this.allCustomers = Utilities.map(content.customers, (id, c) => Customer.fromJson(c))
         return <div>
             <CRMSearchNavbar match={this.props.match} zoneName={this.zoneName} />

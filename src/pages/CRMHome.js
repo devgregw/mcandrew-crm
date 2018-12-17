@@ -15,6 +15,7 @@ export default class CRMHome extends React.Component {
     }
 
     onLoadComplete(content) {
+        document.title = `${this.zoneName} - CRM`
         return <div>
             <CRMHomeNavbar models={content.models} match={this.props.match} zoneName={this.zoneName}/>
             <Breadcrumb style={{marginTop: '1rem', marginLeft: '1rem', marginRight: '1rem'}}>

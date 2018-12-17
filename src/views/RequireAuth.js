@@ -9,6 +9,7 @@ export default class RequireAuth extends React.Component {
         this.state = {
             status: 0
         }
+        document.title = 'Authorizing - CRM'
         firebase.auth().onAuthStateChanged(user => this.setState({status: user ? 2 : 1}))
     }
 
