@@ -33,7 +33,17 @@ export default class AddressInput extends React.Component {
     }
 
     validate() {
-        return this.state.useAddress ? Utilities.map(this.state, (k, v) => v).filter(b => b === false).length === 0 : true
+        let newState = {
+            useAddress: this.state.useAddress,
+            line1: this.state.useAddress ? Boolean(document.getElementById('line1').value) : true,
+            city: this.state.useAddress ? Boolean(document.getElementById('city').value) : true,
+            state: this.state.useAddress ? Boolean(document.getElementById('state').value) : true,
+            zip: this.state.useAddress ? Boolean(document.getElementById('zip').value) : true
+        }
+        let value = this.state.useAddress ? Utilities.map(newState, (k, v) => v).filter(b => b === false).length === 0 : true
+        if (!value)
+            this.setState(newState)
+        return value
     }
 
     getValue() {

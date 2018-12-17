@@ -1,23 +1,15 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import {
     Button,
     Modal,
     ModalHeader,
     ModalBody,
     ModalFooter,
-    Form,
-    FormGroup,
-    FormFeedback,
-    FormText,
-    Input,
-    InputGroup,
-    Label
+    Form
 } from 'reactstrap'
 import Utilities from '../Utilities'
 import CriteriaConfigField from './CriteriaConfigField'
-import Customer from '../models/Customer';
-import Address from '../models/Address';
+import Customer from '../models/Customer'
 import * as firebase from 'firebase'
 import AddressInput from './AddressInput'
 
@@ -62,7 +54,7 @@ export default class CustomerEditorModal extends React.Component {
             criteria: Boolean(this.criteriaConfigField.validate())
         }
         this.setState(newState)
-        return (Utilities.asArray(newState).findIndex((v) => Boolean(v) == false) === -1)
+        return (Utilities.asArray(newState).findIndex((v) => Boolean(v) === false) === -1)
     }
 
     save() {
