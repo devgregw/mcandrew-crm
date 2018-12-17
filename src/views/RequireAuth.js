@@ -1,9 +1,5 @@
 import React from 'react'
 import * as firebase from 'firebase'
-import {
-    Card,
-    CardBody
-} from 'reactstrap'
 import {Redirect} from 'react-router-dom'
 import FullScreenLoader from './FullScreenLoader'
 

@@ -8,10 +8,8 @@ import {
     Input,
     Card,
     CardBody,
-    CardImg,
     CardTitle,
     CardSubtitle,
-    Progress,
     Alert
 } from 'reactstrap'
 import * as queryString from 'query-string'
