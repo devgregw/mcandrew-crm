@@ -30,8 +30,6 @@ ReactDOM.render(<div id="router-host">
                 <Route exact path="/auth" component={Auth} />
                 <Route exact path="/:area" render={({ match }) => <RequireAuth match={match} render={() => <CRMHome match={match} />} />} />
                 <Route exact path="/:area/search" render={({ match }) => <RequireAuth match={match} render={() => <CRMSearch match={match} />} />} />
-                
-
             </Switch>
         </div>
     </Router>
