@@ -75,6 +75,7 @@ class ManagerCard extends React.Component {
 
     save() {
         let models = this.state.models
+        models['Any'] = ['Any']
         this.setState({loading: true})
         firebase.database().ref('/models').set(models).then(() => window.location.assign('/'))
     }
