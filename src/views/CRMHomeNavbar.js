@@ -87,6 +87,7 @@ export default class CRMHomeNavbar extends React.Component {
                             <DropdownToggle style={{color: 'white'}} nav caret>{firebase.auth().currentUser.displayName || firebase.auth().currentUser.email}</DropdownToggle>
                             <DropdownMenu right>
                                 <DropdownItem onClick={this.toggleDisplayNameModal}>Change Display Name</DropdownItem>
+                                <DropdownItem href="/auth/new">Create New Account</DropdownItem>
                                 <DropdownItem divider />
                                 <DropdownItem href="/auth?action=signout" style={{color: 'var(--danger)'}}>Sign Out</DropdownItem>
                             </DropdownMenu>

@@ -17,6 +17,7 @@ import Error from './pages/Error'
 import CRMSearch from './pages/CRMSearch'
 import MMManager from './pages/MMManager'
 import InitializeFirebase from './InitializeFirebase'
+import NewAccount from './pages/NewAccount'
 
 InitializeFirebase.initialize()
 
@@ -28,6 +29,7 @@ ReactDOM.render(<div id="router-host">
                 <Route exact path="/" render={({ match }) => <RequireAuth match={match} render={() => <AreaSelect match={match} />} />} />
                 <Route exact path="/manage" render={({ match }) => <RequireAuth match={match} render={() => <MMManager />} />} />
                 <Route exact path="/auth" component={Auth} />
+                <Route exact path="/auth/new" component={NewAccount}/>
                 <Route exact path="/:area" render={({ match }) => <RequireAuth match={match} render={() => <CRMHome match={match} />} />} />
                 <Route exact path="/:area/search" render={({ match }) => <RequireAuth match={match} render={() => <CRMSearch match={match} />} />} />
             </Switch>

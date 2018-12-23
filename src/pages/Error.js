@@ -22,6 +22,8 @@ export default class Error extends React.Component {
                 return {code: code, message: 'Unrecognized zone ID'}
             case 103:
                 return {code: code, message: 'Suspicious numeric condition detected'}
+            case 104:
+                return {code: code, message: 'Unauthorized account creation token'}
             default:
                 return {code: 100, message: 'Unrecognized error code'}
         }
